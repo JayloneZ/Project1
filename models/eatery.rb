@@ -57,6 +57,15 @@ def self.delete(id)
   (SqlRunner.run(sql, values)).map {|eatery| Eatery.new(eatery)}
 end
 
+def self.show(id)
+  sql = "
+    SELECT * FROM eateries
+    WHERE id = $1
+  "
+  values = [id]
+  Eatery.new(SqlRunner.run(sql, values)[0])
+end
+
 def update()
   sql = "
     UPDATE eateries SET
