@@ -1,10 +1,13 @@
 <ul>
 <% for deal in @deals %>
+<% eatery = deal.find_eatery %>
 <li>
 <tr>
   <td><%= deal.name %></td>
   <td>|</td>
   <td>Discount = <%= deal.discount_decimal %></td>
+  <td>|</td>
+  <td>Exclusively available at <a href="/eateries/<%= eatery.id %>"><%= eatery.name %></a></td>
 </tr>
 </li>
 <% end %>

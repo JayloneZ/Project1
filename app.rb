@@ -17,3 +17,13 @@ get '/deals' do
   @deals = Deal.all
   erb( :"deals/index" )
 end
+
+get '/eateries/:id' do
+  @eatery = Eatery.show(params[:id])
+  erb( :"eateries/show" )
+end
+
+get '/deals/:id' do
+  @deal = Deal.show(params[:id])
+  erb( :"deals/show" )
+end
