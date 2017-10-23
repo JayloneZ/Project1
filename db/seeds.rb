@@ -19,14 +19,22 @@ eatery1.save()
 deal1 = Deal.new({
   'name' => 'Tuesdays Premium Double Deluxe Meats Package',
   'day' => '2',
-  'discount_decimal' => '.65',
+  'discount_decimal' => '0.65',
   'eatery_id' => eatery1.id
 })
 deal1.save()
 
+deal2 = Deal.new({
+  'name' => 'Wednesdays Premium Double Deluxe Meats Package',
+  'day' => '3',
+  'discount_decimal' => '0.50',
+  'eatery_id' => eatery1.id
+})
+deal2.save()
+
 burger1 = Burger.new({
   'name' => 'Mucho Meats Deluxe Burger',
-  'price' => '6.95',
+  'price' => '6.90',
   'eatery_id' => eatery1.id
 })
 burger1.save()

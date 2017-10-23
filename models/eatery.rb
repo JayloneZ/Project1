@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner.rb'
+require_relative 'deal.rb'
 
 class Eatery
 
@@ -16,7 +17,8 @@ def self.all()
     SELECT * FROM eateries
   "
   db_eateries = SqlRunner.run(sql, nil)
-  eateries = db_eateries.map {|eatery| Eatery.new(eatery)}[0]
+  eateries = db_eateries.map {|eatery| Eatery.new(eatery)}
+  return eateries
 end
 
 def self.delete_all()
@@ -74,6 +76,15 @@ def update()
   values = [@name, @address, @url, @id]
   SqlRunner.run(sql, values)
   Eatery.all
+end
+
+def find_deals()
+  sql = "
+    SELECT * FROM DEALS
+    WHERE eatery_id = $1
+  "
+  values = [@id]
+  deals = (SqlRunner.run(sql, values)).map {|deal| Deal.new(deal)}
 end
 
 end

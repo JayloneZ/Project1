@@ -1,0 +1,14 @@
+<% for eatery in @eateries %>
+<% deals = eatery.find_deals %>
+<tr>
+  <td><%= eatery.name %></td>
+  <td>|</td>
+  <td><%= eatery.address %></td>
+  <% if deals != nil %>
+  <% for deal in deals %>
+  <td>|</td>
+  <td><%= deal.name %></td>
+  <% end %>
+  <% end %>
+</tr>
+<% end %>

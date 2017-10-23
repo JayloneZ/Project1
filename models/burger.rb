@@ -16,7 +16,8 @@ def self.all()
     SELECT * FROM burgers
   "
   db_burgers = SqlRunner.run(sql, nil)
-  burgers = db_burgers.map {|burger| Burger.new(burger)}[0]
+  burgers = db_burgers.map {|burger| Burger.new(burger)}
+  return burgers
 end
 
 def self.delete_all()

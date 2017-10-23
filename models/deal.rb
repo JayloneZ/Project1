@@ -17,7 +17,8 @@ def self.all()
     SELECT * FROM deals
   "
   db_deals = SqlRunner.run(sql, nil)
-  deals = db_deals.map {|deal| Deal.new(deal)}[0]
+  deals = db_deals.map {|deal| Deal.new(deal)}
+  return deals
 end
 
 def self.delete_all()
