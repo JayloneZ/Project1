@@ -2,6 +2,18 @@
 <td><%= @deal.name %>, available on <%= @deal.day %></td>
 <td>|<td>
 <td><%= @deal.discount_decimal %></td>
+<% burgers = @deal.show_burgers %>
+<p>Deal applies to the following burgers:</p>
+<ul>
+<% for burger in burgers %>
+  <li>
+    <%= burger.name %>
+  </li>
+  <li>
+    <%= burger.price %>
+  </li>
+<% end %>
+</ul>
 <% eatery = @deal.find_eatery %>
 <ul>
   <li>

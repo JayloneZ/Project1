@@ -16,6 +16,13 @@ eatery1 = Eatery.new({
 })
 eatery1.save()
 
+eatery2 = Eatery.new({
+  'name' => 'Arbys',
+  'address' => '123 Fake Street',
+  'url' => 'N/A'
+})
+eatery2.save()
+
 deal1 = Deal.new({
   'name' => 'Tuesdays Premium Double Deluxe Meats Package',
   'day' => '2',
@@ -32,6 +39,14 @@ deal2 = Deal.new({
 })
 deal2.save()
 
+deal3 = Deal.new({
+  'name' => '15% off for first 2 customers',
+  'day' => '2',
+  'discount_decimal' => '.85',
+  'eatery_id' => eatery2.id
+})
+deal3.save()
+
 burger1 = Burger.new({
   'name' => 'Mucho Meats Deluxe Burger',
   'price' => '6.90',
@@ -39,11 +54,30 @@ burger1 = Burger.new({
 })
 burger1.save()
 
+burger2 = Burger.new({
+  'name' => 'Chicken Cheese & Bacon',
+  'price' => '8.99',
+  'eatery_id' => eatery2.id
+})
+burger2.save()
+
 burger1_deal1 = BurgerDeal.new({
   'burger_id' => burger1.id,
   'deal_id' => deal1.id
 })
 burger1_deal1.save()
+
+burger1_deal2 = BurgerDeal.new({
+  'burger_id' => burger1.id,
+  'deal_id' => deal2.id
+})
+burger1_deal2.save()
+
+burger2_deal3 = BurgerDeal.new({
+  'burger_id' => burger2.id,
+  'deal_id' => deal3.id
+})
+burger2_deal3.save()
 
 binding.pry()
 nil

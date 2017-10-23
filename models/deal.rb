@@ -1,5 +1,6 @@
 require_relative '../db/sql_runner.rb'
 require_relative 'eatery.rb'
+require_relative 'burger.rb'
 
 class Deal
 
@@ -90,13 +91,22 @@ def update()
   Deal.all
 end
 
-def find_eatery
+def find_eatery()
   sql = "
     SELECT * FROM eateries
     WHERE id = $1
   "
   values = [@eatery_id]
   eatery = Eatery.new(SqlRunner.run(sql, values)[0])
+end
+
+def show_burgers()
+  sql = "
+    SELECT * FROM burgers
+    INNER JOIN burger_deals ON deal_id = $1
+  "
+  values = [@id]
+  burgers = SqlRunner.run(sql, values).map {|burger| Burger.new(burger)}
 end
 
 end
