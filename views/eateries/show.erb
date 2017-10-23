@@ -3,7 +3,7 @@
 <td>|<td>
 <td><%= @eatery.address %></td>
 <td>|<td>
-<td><%= @eatery.url %></td>
+<td><a href="<%= @eatery.url %>">Website</a></td>
 <% deals = @eatery.find_deals %>
 <% if deals != nil %>
 <p>Deals:</p>

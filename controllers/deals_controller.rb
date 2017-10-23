@@ -10,6 +10,5 @@ end
 
 get '/deals/:id' do
   @deal = Deal.show(params[:id])
-  @burgers = Deal.show_burgers
   erb( :"deals/show" )
 end
