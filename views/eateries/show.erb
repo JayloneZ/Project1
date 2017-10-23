@@ -1,0 +1,15 @@
+<tr>
+<td><%= @eatery.name %></td>
+<td>|<td>
+<td><%= @eatery.address %></td>
+<td>|<td>
+<td><%= @eatery.url %></td>
+<% deals = @eatery.find_deals %>
+<% if deals != nil %>
+<% for deal in deals %>
+<td>|</td>
+<td><%= deal.name %></td>
+<% end %>
+<% end %>
+
+</tr>
