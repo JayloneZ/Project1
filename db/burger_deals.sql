@@ -14,14 +14,14 @@ CREATE TABLE deals(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
   day INT4,
-  discount_decimal NUMERIC,
+  discount_decimal VARCHAR(255),
   eatery_id INT4 REFERENCES eateries(id)
 );
 
 CREATE TABLE burgers(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  price NUMERIC,
+  price VARCHAR(255),
   eatery_id INT4 REFERENCES eateries(id)
 );
 

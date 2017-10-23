@@ -15,9 +15,5 @@
 <% end %>
 </ul>
 <% eatery = @deal.find_eatery %>
-<ul>
-  <li>
-    Exclusively available at <a href="/eateries/<%= eatery.id %>"><%= eatery.name %></a>
-  </li>
-</ul>
+<p>Exclusively available at <a href="/eateries/<%= eatery.id %>"><%= eatery.name %></a></p>
 </tr>

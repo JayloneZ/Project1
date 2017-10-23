@@ -1,3 +1,4 @@
+<p>All deals:</p>
 <ul>
 <% for deal in @deals %>
 <% eatery = deal.find_eatery %>
@@ -5,9 +6,9 @@
 <tr>
   <td><a href="/deals/<%= deal.id %>"><%= deal.name %></a></td>
   <td>|</td>
-  <td>Discount = <%= deal.discount_decimal %></td>
+  <td>Discount: <%= deal.discount_decimal %></td>
   <td>|</td>
-  <td><a href="/eateries/<%= eatery.id %>">Show other deals offered by <%= eatery.name %></a></td>
+  <td><a href="/eateries/<%= eatery.id %>">Show all deals offered by <%= eatery.name %></a></td>
 </tr>
 </li>
 <% end %>
