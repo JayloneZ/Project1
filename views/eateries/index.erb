@@ -3,12 +3,15 @@
   <td><a href='/eateries/<%= eatery.id %>'><%= eatery.name %></a></td>
   <td>|</td>
   <td><%= eatery.address %></td>
+  </tr>
   <% deals = eatery.find_deals %>
   <% if deals != nil %>
+  <ul>
   <% for deal in deals %>
-  <td>|</td>
-  <td><%= deal.name %></td>
+  <li>
+  <a href="/deals/<%= deal.id %>"><%= deal.name %></a>
+  </li>
   <% end %>
+  </ul>
   <% end %>
-</tr>
 <% end %>

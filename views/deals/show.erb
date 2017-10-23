@@ -1,9 +1,11 @@
 <tr>
-<td><%= @deal.name %></td>
-<td>|<td>
-<td><%= @deal.day %></td>
+<td><%= @deal.name %>, available on <%= @deal.day %></td>
 <td>|<td>
 <td><%= @deal.discount_decimal %></td>
 <% eatery = @deal.find_eatery %>
-<td>Exclusively available at <a href="/eateries/<%= eatery.id %>"><%= eatery.name %></a>
+<ul>
+  <li>
+    Exclusively available at <a href="/eateries/<%= eatery.id %>"><%= eatery.name %></a>
+  </li>
+</ul>
 </tr>

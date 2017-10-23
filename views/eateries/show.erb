@@ -6,10 +6,12 @@
 <td><%= @eatery.url %></td>
 <% deals = @eatery.find_deals %>
 <% if deals != nil %>
+<p>Deals:</p>
+<ul>
 <% for deal in deals %>
-<td>|</td>
-<td><%= deal.name %></td>
+<li><a href="/deals/<%= deal.id %>"><%= deal.name %></a></li>
 <% end %>
+</ul>
 <% end %>
 
 </tr>
