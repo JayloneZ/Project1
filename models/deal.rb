@@ -109,4 +109,23 @@ def show_burgers()
   burgers = SqlRunner.run(sql, values).map {|burger| Burger.new(burger)}
 end
 
+def day_name()
+  case @day
+  when 1
+    return "Monday"
+  when 2
+    return "Tuesday"
+  when 3
+    return "Wednesday"
+  when 4
+    return "Thursday"
+  when 5
+    return "Friday"
+  when 6
+    return "Saturday"
+  when 7
+    return "Sunday"
+  end
+end
+
 end

@@ -38,7 +38,7 @@ def new_price()
   values = [@deal_id]
   result = SqlRunner.run(sql, values)[0]
   new_price = result['price'].to_f * result['discount_decimal'].to_f
-  @new_price = new_price.round(2)
+  new_price.round(2)
 end
 
 def save()
@@ -46,17 +46,15 @@ def save()
     INSERT INTO burger_deals
     (
       deal_id,
-      burger_id,
-      new_price
+      burger_id
     ) VALUES
     (
       $1,
-      $2,
-      $3
+      $2
     )
     RETURNING *
   "
-  values = [@deal_id, @burger_id, @new_price]
+  values = [@deal_id, @burger_id]
   @id = SqlRunner.run(sql, values)[0]['id']
 end
 
