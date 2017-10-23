@@ -12,3 +12,8 @@ get '/eateries' do
   @eateries = Eatery.all
   erb( :"eateries/index" )
 end
+
+get '/deals' do
+  @deals = Deal.all
+  erb( :"deals/index" )
+end

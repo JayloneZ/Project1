@@ -1,0 +1,11 @@
+<ul>
+<% for deal in @deals %>
+<li>
+<tr>
+  <td><%= deal.name %></td>
+  <td>|</td>
+  <td>Discount = <%= deal.discount_decimal %></td>
+</tr>
+</li>
+<% end %>
+</ul>

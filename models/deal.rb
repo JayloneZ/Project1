@@ -80,4 +80,13 @@ def update()
   Deal.all
 end
 
+def find_eatery
+  sql = "
+    SELECT * FROM eateries
+    WHERE id = $1
+  "
+  values = [@eatery_id]
+  eatery = Eatery.new(SqlRunner.run(sql, values))
+end
+
 end
