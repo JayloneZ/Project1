@@ -11,13 +11,12 @@ get '/eateries/new' do
   erb( :"eateries/new" )
 end
 
-get '/eateries/:id' do
-  @eatery = Eatery.show(params[:id])
-  erb( :"eateries/show" )
-end
-
-
 post '/eateries' do
   Eatery.new(params).save
   redirect to '/eateries'
+end
+
+get '/eateries/:id' do
+  @eatery = Eatery.show(params[:id])
+  erb( :"eateries/show" )
 end
