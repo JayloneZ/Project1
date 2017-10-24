@@ -75,4 +75,13 @@ def update()
   Burger.all
 end
 
+def self.show(id)
+  sql = "
+    SELECT * FROM burgers
+    WHERE id = $1
+  "
+  values = [id]
+  Burger.new(SqlRunner.run(sql, values)[0])
+end
+
 end
