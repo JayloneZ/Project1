@@ -14,4 +14,14 @@
 </ul>
 <% end %>
 
+<% burgers = @eatery.find_burgers %>
+<% if burgers != nil %>
+<p>Burgers:</p>
+<ul>
+<% for burger in burgers %>
+<li><%= burger.name %></li>
+<% end %>
+</ul>
+<% end %>
+
 </tr>

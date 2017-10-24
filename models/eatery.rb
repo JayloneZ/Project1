@@ -1,5 +1,6 @@
 require_relative '../db/sql_runner.rb'
 require_relative 'deal.rb'
+require_relative 'burger.rb'
 
 class Eatery
 
@@ -89,11 +90,20 @@ end
 
 def find_deals()
   sql = "
-    SELECT * FROM DEALS
+    SELECT * FROM deals
     WHERE eatery_id = $1
   "
   values = [@id]
   deals = (SqlRunner.run(sql, values)).map {|deal| Deal.new(deal)}
+end
+
+def find_burgers()
+  sql = "
+    SELECT * FROM burgers
+    WHERE eatery_id = $1
+  "
+  values = [@id]
+  burgers = (SqlRunner.run(sql, values)).map {|burger| Burger.new(burger)}
 end
 
 end
