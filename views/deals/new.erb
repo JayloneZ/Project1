@@ -39,6 +39,18 @@
 </select>
 </li>
 <br />
+
+<li>
+<label for="burger_id"></label>
+  <% for burger in @burgers %>
+  <input type="checkbox" name="burger" value="<% burger.id %>"><%= burger.name %><br />
+  <% end %>
+</li>
+
+<label for="deal_id"></label>
+<input type="hidden" name="deal_id" value="<%= @deal.id %>">
+
+<br />
 <br />
 
 <li>
@@ -48,3 +60,6 @@
 </ul>
 
 </form>
+
+
+<!-- deals > select burgers > take burger ids > create burger_deals with new deal_id and burger ids -->
