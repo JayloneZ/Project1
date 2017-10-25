@@ -21,12 +21,18 @@ get '/eateries/:id' do
   erb( :"eateries/show" )
 end
 
+post '/eateries/:id' do
+  eatery_id = params[:eatery_id]
+  redirect to ("/eateries/#{eatery_id}/new")
+end
+
 get '/eateries/:id/new' do
   @eatery_id = params[:id]
   erb( :"burgers/new" )
 end
 
-post '/eateries/:id' do
+post '/eateries/:eatery_id' do
   Burger.new(params).save
-  redirect to '/eateries/'
+  eatery_id = params[:eatery_id]
+  redirect to ("/eateries/#{eatery_id}")
 end

@@ -24,5 +24,14 @@
 </ul>
 <% end %>
 
+<form class="" action="/eateries/<%= @eatery.id %>" method="post">
+
+<label for="eatery_id"></label>
+<input type="hidden" name="eatery_id" value="<%= @eatery.id %>">
+
+<input type="submit" value="Create new burger">
+
+</form>
+
 
 </tr>
