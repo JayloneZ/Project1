@@ -3,13 +3,13 @@
 <td>|<td>
 <td><%= @eatery.address %></td>
 <td>|<td>
-<td><a href="<%= @eatery.url %>">Website</a></td>
+<td><a class="link" href="<%= @eatery.url %>">Website</a></td>
 <% deals = @eatery.find_deals %>
 <% if deals != nil %>
 <p>Deals:</p>
 <ul>
 <% for deal in deals %>
-<li><a href="/deals/<%= deal.id %>"><%= deal.name %></a></li>
+<li><a class="link" href="/deals/<%= deal.id %>"><%= deal.name %></a></li>
 <% end %>
 </ul>
 <% end %>

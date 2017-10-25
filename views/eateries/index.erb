@@ -1,6 +1,6 @@
 <% for eatery in @eateries %>
 <tr>
-  <td><a href='/eateries/<%= eatery.id %>'><%= eatery.name %></a></td>
+  <td><a class="link" href='/eateries/<%= eatery.id %>'><%= eatery.name %></a></td>
   <td>|</td>
   <td><%= eatery.address %></td>
   </tr>
@@ -9,7 +9,7 @@
   <ul>
   <% for deal in deals %>
   <li>
-  <a href="/deals/<%= deal.id %>"><%= deal.name %></a>
+  <a class="link" href="/deals/<%= deal.id %>"><%= deal.name %></a>
   </li>
   <% end %>
   </ul>
