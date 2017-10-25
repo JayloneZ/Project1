@@ -61,6 +61,13 @@ burger2 = Burger.new({
 })
 burger2.save()
 
+burger3 = Burger.new({
+  'name' => 'The Whoppar',
+  'price' => '6.00',
+  'eatery_id' => eatery2.id
+})
+burger3.save()
+
 burger1_deal1 = BurgerDeal.new({
   'burger_id' => burger1.id,
   'deal_id' => deal1.id
@@ -78,6 +85,12 @@ burger2_deal3 = BurgerDeal.new({
   'deal_id' => deal3.id
 })
 burger2_deal3.save()
+
+burger3_deal3 = BurgerDeal.new({
+  'burger_id' => burger3.id,
+  'deal_id' => deal3.id
+})
+burger3_deal3.save()
 
 binding.pry()
 nil

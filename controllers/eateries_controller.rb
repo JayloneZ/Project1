@@ -7,6 +7,10 @@ get '/eateries' do
   erb( :"eateries/index" )
 end
 
+post '/eateries/new' do
+  redirect to ("eateries/new")
+end
+
 get '/eateries/new' do
   erb( :"eateries/new" )
 end

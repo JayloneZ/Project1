@@ -11,7 +11,8 @@
   </li>
   <ul>
   <li>
-    <p>Price: <%= burger.price %></p>
+    <p>Old Price: <strike><%= burger.price %></strike></p>
+    <p>New Price!!!: <%= (burger.price * @deal.discount_decimal).round(2) %></p>
   </li>
 </ul>
 <% end %>

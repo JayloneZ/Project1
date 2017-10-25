@@ -102,8 +102,10 @@ end
 
 def show_burgers()
   sql = "
-    SELECT * FROM burgers
-    INNER JOIN burger_deals ON deal_id = $1
+    SELECT burgers.* FROM burgers
+    INNER JOIN burger_deals ON burgers.id = burger_deals.burger_id
+    INNER JOIN deals ON deals.id = burger_deals.deal_id
+    WHERE burger_deals.deal_id = $1
   "
   values = [@id]
   burgers = SqlRunner.run(sql, values).map {|burger| Burger.new(burger)}

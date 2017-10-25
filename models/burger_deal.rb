@@ -26,21 +26,6 @@ def self.delete_all()
   SqlRunner.run(sql, nil)
 end
 
-def new_price()
-  sql = "
-    SELECT burgers.price, deals.discount_decimal FROM burgers
-    INNER JOIN burger_deals
-    ON burgers.id = burger_deals.burger_id
-    INNER JOIN deals
-    ON deals.id = burger_deals.deal_id
-    WHERE deals.id = $1
-  "
-  values = [@deal_id]
-  result = SqlRunner.run(sql, values)[0]
-  new_price = result['price'].to_f * result['discount_decimal'].to_f
-  new_price.round(2)
-end
-
 def save()
   sql = "
     INSERT INTO burger_deals
