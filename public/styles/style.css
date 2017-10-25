@@ -1,9 +1,16 @@
 .nav {
   padding: 0px 0px 0px 0px;
+}
+
+.navul {
+  padding: 0px 0px 0px 0px;
   background-color: black;
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  position: static;
+  top: 0;
+  width: 100%;
 }
 
 .navli {
@@ -25,6 +32,11 @@
   color: white;
 }
 
+#content {
+  background-color: purple;
+  color: white;
+}
+
 .link:link {
   color: white;
 }
@@ -35,4 +47,15 @@
 
 .link:hover {
   color: pink;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

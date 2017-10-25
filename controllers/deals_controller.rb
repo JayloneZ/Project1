@@ -22,7 +22,6 @@ end
 
 post '/deals' do
   Deal.new(params).save
-  BurgerDeal.new(params).save
   redirect to '/deals'
 end
 
