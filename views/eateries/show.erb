@@ -14,6 +14,12 @@
 </ul>
 <% end %>
 
+<form class="" action="/deals/new" method="post">
+
+<input type="submit" value="Create new deal">
+
+</form>
+
 <% burgers = @eatery.find_burgers %>
 <% if burgers != nil %>
 <p>Burgers:</p>

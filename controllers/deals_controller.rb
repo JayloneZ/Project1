@@ -9,6 +9,10 @@ get '/deals' do
   erb( :"deals/index" )
 end
 
+post '/deals/new' do
+  redirect to ("deals/new")
+end
+
 get '/deals/new' do
   @eateries = Eatery.all
   erb( :"deals/new" )
