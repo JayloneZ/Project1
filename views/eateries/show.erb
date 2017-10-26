@@ -1,3 +1,4 @@
+<div class="grid">
 <tr>
   <img class="img" src="<%= @eatery.img_src %>" alt="<%= @eatery.name %> logo">
   <br />
@@ -16,8 +17,6 @@
     </ul>
     <% end %>
 
-    <a class="button" href="/deals/new">Create a new deal!</a>
-
     <% burgers = @eatery.find_burgers %>
     <% if burgers != nil %>
     <p>Burgers:</p>
@@ -31,6 +30,8 @@
   </ul>
   <% end %>
 
-  <a class="button" href="/eateries/<%= @eatery.id %>/new">Create a new burger!</a>
-
 </tr>
+</div>
+
+    <a class="button" href="/deals/new">Create a new deal!</a>
+    <a class="button" href="/eateries/<%= @eatery.id %>/new">Create a new burger!</a>
