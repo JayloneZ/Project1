@@ -1,7 +1,9 @@
 <tr>
+  <img class="img" src="<%= @eatery.img_src %>" alt="<%= @eatery.name %> logo">
+  <br />
   <td><%= @eatery.name %></td>
-  <td>|<td>
-    <td><%= @eatery.address %></td>
+  <br />
+    <td>Adress: <%= @eatery.address %></td>
     <td>|<td>
       <td><a class="link" href="<%= @eatery.url %>">Website</a></td>
       <% deals = @eatery.find_deals %>

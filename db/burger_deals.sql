@@ -7,7 +7,8 @@ CREATE TABLE eateries(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
   address VARCHAR(255),
-  url VARCHAR(255)
+  url VARCHAR(255),
+  img_src VARCHAR(255)
 );
 
 CREATE TABLE deals(

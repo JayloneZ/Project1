@@ -5,12 +5,13 @@ require_relative 'burger.rb'
 class Eatery
 
 attr_reader :id
-attr_accessor :name, :address, :url
+attr_accessor :name, :address, :url, :img_src
 def initialize(options)
   @id = options['id'].to_i if options['id']
   @name = options['name']
   @address = options['address']
   @url = options['url']
+  @img_src = options['img_src']
 end
 
 def self.all()
@@ -35,16 +36,18 @@ def save()
     (
       name,
       address,
-      url
+      url,
+      img_src
     ) VALUES
     (
       $1,
       $2,
-      $3
+      $3,
+      $4
     )
     RETURNING *
   "
-  values = [@name, @address, @url]
+  values = [@name, @address, @url, @img_src]
   @id = SqlRunner.run(sql, values)[0]['id']
 end
 
@@ -73,17 +76,19 @@ def update()
     (
       name,
       address,
-      url
+      url,
+      img_src
     ) =
     (
       $1,
       $2,
-      $3
+      $3,
+      $4
     )
-    WHERE id = $4
+    WHERE id = $5
     RETURNING *
   "
-  values = [@name, @address, @url, @id]
+  values = [@name, @address, @url, @img_src, @id]
   SqlRunner.run(sql, values)
   Eatery.all
 end

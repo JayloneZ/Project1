@@ -1,23 +1,30 @@
-<div class="eateryindex">
+<div class="grid">
 <% for eatery in @eateries %>
+<div class="cell">
+<img class="img" src="<%= eatery.img_src %>" alt="<%= eatery.name %> logo">
 <tr>
-  <td><a class="link" href='/eateries/<%= eatery.id %>'><%= eatery.name %></a></td>
-  <td>|</td>
-  <td><%= eatery.address %></td>
-  </tr>
+  <td><h1><a class="link" href='/eateries/<%= eatery.id %>'><%= eatery.name %></a></h1></td>
+  <br />
+  <td>Address: <%= eatery.address %></td>
+  <br />
+  <br />
+</tr>
   <% deals = eatery.find_deals %>
   <% if deals != nil %>
-  <ul>
+  <h3>Deals:</h3>
+  <br />
+  <ul class="list">
   <% for deal in deals %>
   <li>
   <a class="link" href="/deals/<%= deal.id %>"><%= deal.name %></a>
   </li>
-  <br />
   <% end %>
   <br />
   </ul>
   <% end %>
+  </div>
 <% end %>
-
+</div>
+<div class="createeatery">
 <a class="button" href="eateries/new">Create new Eatery!</a>
 </div>

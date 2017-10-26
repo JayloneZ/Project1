@@ -12,14 +12,16 @@ Eatery.delete_all
 eatery1 = Eatery.new({
   'name' => 'Sandys Burger Joint',
   'address' => 'CodeClan Edinburgh',
-  'url' => 'http://www.sandystavern.com/'
+  'url' => 'http://www.sandystavern.com/',
+  'img_src' => '/images/sandy.png'
 })
 eatery1.save()
 
 eatery2 = Eatery.new({
   'name' => 'Bobs Burgers',
   'address' => 'Burger Street',
-  'url' => 'http://thebobsburgerexperiment.com/'
+  'url' => 'http://thebobsburgerexperiment.com/',
+  'img_src' => '/images/bob.jpg'
 })
 eatery2.save()
 
