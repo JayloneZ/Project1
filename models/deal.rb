@@ -111,8 +111,8 @@ class Deal
     burgers = SqlRunner.run(sql, values).map {|burger| Burger.new(burger)}
   end
 
-  def day_name()
-    case @day
+  def day_name
+    case self.day
     when 1
       return "Monday"
     when 2
