@@ -132,3 +132,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.logo {
+  height: 50px;
+  padding: 5px;
+  margin-left: 10px;
+}
