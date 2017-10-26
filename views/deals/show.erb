@@ -1,22 +1,22 @@
 <tr>
-<td><%= @deal.name %>, available on <%= @deal.day %></td>
-<td>|<td>
-<td>Deal discount: <%= (@deal.discount_decimal * 100) %>%</td>
-<% burgers = @deal.show_burgers %>
-<p>Deal applies to the following burgers:</p>
-<ul>
-<% for burger in burgers %>
-  <li>
-    <%= burger.name %>
-  </li>
-  <ul>
-  <li>
-    <p>Old Price: <strike><%= "%.2f" % burger.price %></strike></p>
-    <p>New Price!!!: <%= "%.2f" % (burger.price * @deal.discount_decimal).round(2) %></p>
-  </li>
-</ul>
-<% end %>
-</ul>
-<% eatery = @deal.find_eatery %>
-<p>Exclusively available at <a class="link" href="/eateries/<%= eatery.id %>"><%= eatery.name %></a></p>
+  <td><%= @deal.name %>, available on <%= @deal.day %></td>
+  <td>|<td>
+    <td>Deal discount: <%= (@deal.discount_decimal * 100) %>%</td>
+    <% burgers = @deal.show_burgers %>
+    <p>Deal applies to the following burgers:</p>
+    <ul>
+    <% for burger in burgers %>
+    <li>
+      <%= burger.name %>
+    </li>
+    <ul>
+      <li>
+        <p>Old Price: <strike><%= "%.2f" % burger.price %></strike></p>
+        <p>New Price!!!: <%= "%.2f" % (burger.price * @deal.discount_decimal).round(2) %></p>
+      </li>
+    </ul>
+    <% end %>
+  </ul>
+  <% eatery = @deal.find_eatery %>
+  <p>Exclusively available at <a class="link" href="/eateries/<%= eatery.id %>"><%= eatery.name %></a></p>
 </tr>

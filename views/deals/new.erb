@@ -1,58 +1,58 @@
 <div class="form">
-<form class="" action="/deals" method="post">
-  <ul style="list-style-type:none">
+  <form class="" action="/deals" method="post">
+    <ul style="list-style-type:none">
 
-<li>
-<label for="name">Burger name: </label>
-<input type="text" name="name" placeholder="name">
-</li>
-<br />
+      <li>
+        <label for="name">Burger name: </label>
+        <input type="text" name="name" placeholder="name">
+      </li>
+      <br />
 
-<li>
-<label for="day"></label>
-<select>
-  <option value="1">Monday</option>
-  <option value="2">Tuesday</option>
-  <option value="3">Wednesday</option>
-  <option value="4">Thursday</option>
-  <option value="5">Friday</option>
-  <option value="6">Saturday</option>
-  <option value="7">Sunday</option>
-</select>
-</li>
-<br />
+      <li>
+        <label for="day"></label>
+        <select>
+          <option value="1">Monday</option>
+          <option value="2">Tuesday</option>
+          <option value="3">Wednesday</option>
+          <option value="4">Thursday</option>
+          <option value="5">Friday</option>
+          <option value="6">Saturday</option>
+          <option value="7">Sunday</option>
+        </select>
+      </li>
+      <br />
 
-<li>
-<label for="discount_decimal">Select your discount!</label>
-<div id="slidecontainer">
-  <input type="range" name="discount_decimal" min="0" max="1" step=".01" value="0.5" class="slider" id="discountInput" oninput="discountOutput.value = discountInput.value">
-  <output name="discountOutput" id="discountOutput">0.5</output>
-</div>
-</li>
-<br />
+      <li>
+        <label for="discount_decimal">Select your discount!</label>
+        <div id="slidecontainer">
+          <input type="range" name="discount_decimal" min="0" max="1" step=".01" value="0.5" class="slider" id="discountInput" oninput="discountOutput.value = discountInput.value">
+          <output name="discountOutput" id="discountOutput">0.5</output>
+        </div>
+      </li>
+      <br />
 
-<li>
-<label for="eatery_id"></label>
-<select name="eatery_id">
-  <% for eatery in @eateries %>
-  <option value="<%= eatery.id %>"><%= eatery.name %></option>
-  <% end %>
-</select>
-</li>
-<br />
+      <li>
+        <label for="eatery_id"></label>
+        <select name="eatery_id">
+          <% for eatery in @eateries %>
+          <option value="<%= eatery.id %>"><%= eatery.name %></option>
+          <% end %>
+        </select>
+      </li>
+      <br />
 
-<li>
-<label for="burger_id"></label>
-  <% for burger in @burgers %>
-  <input type="checkbox" name="burger_id[]" value="<%= burger.id %>"> <%= burger.name %><br />
-  <% end %>
-</li>
-</ul>
+      <li>
+        <label for="burger_id"></label>
+        <% for burger in @burgers %>
+        <input type="checkbox" name="burger_id[]" value="<%= burger.id %>"> <%= burger.name %><br />
+        <% end %>
+      </li>
+    </ul>
 
-<br />
-<br />
+    <br />
+    <br />
 
-<input class="button" type="submit" value="Add deal to eatery!">
+    <input class="button" type="submit" value="Add deal to eatery!">
 
-</form>
+  </form>
 </div>

@@ -1,3 +1,4 @@
+<div class="eateryindex">
 <% for eatery in @eateries %>
 <tr>
   <td><a class="link" href='/eateries/<%= eatery.id %>'><%= eatery.name %></a></td>
@@ -11,14 +12,12 @@
   <li>
   <a class="link" href="/deals/<%= deal.id %>"><%= deal.name %></a>
   </li>
+  <br />
   <% end %>
+  <br />
   </ul>
   <% end %>
 <% end %>
 
-
-<form class="" action="/eateries/new" method="post">
-
-<input class="button" type="submit" value="Create new Eatery">
-
-</form>
+<a class="button" href="eateries/new">Create new Eatery!</a>
+</div>

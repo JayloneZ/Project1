@@ -1,18 +1,18 @@
 <div class="form">
-<form class="" action="/eateries/<%= @eatery_id %>" method="post">
+  <form class="" action="/eateries/<%= @eatery_id %>" method="post">
 
-<% eatery = Eatery.show(@eatery_id) %>
+  <% eatery = Eatery.show(@eatery_id) %>
 
-<label for="eatery_id">Creating a burger for <%= eatery.name %></label>
-<input type="hidden" name="eatery_id" value="<%= @eatery_id %>">
+  <label for="eatery_id">Creating a burger for <%= eatery.name %></label>
+  <input type="hidden" name="eatery_id" value="<%= @eatery_id %>">
 
-<label for="name"></label>
-<input type="text" name="name" placeholder="name">
+  <label for="name"></label>
+  <input type="text" name="name" placeholder="name">
 
-<label for="price"></label>
-<input type="text" name="price" placeholder="price">
+  <label for="price"></label>
+  <input type="text" name="price" placeholder="price">
 
-<input class="button" type="submit" value="Create Burger!">
+  <input class="button" type="submit" value="Create Burger!">
 
-</form>
+  </form>
 </div>
