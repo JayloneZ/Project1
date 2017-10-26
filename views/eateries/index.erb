@@ -4,11 +4,11 @@
   <div class="imgcontainer">
     <a href='/eateries/<%= eatery.id %>'><img class="img" src="<%= eatery.img_src %>" alt="<%= eatery.name %> logo"></a>
   </div>
-  <tr>
+  <p>
     <td><h1><a class="link" href='/eateries/<%= eatery.id %>'><%= eatery.name %></a></h1></td>
+  </p>
     <br />
     <br />
-  </tr>
   <% deals = eatery.find_deals %>
   <% if deals != nil %>
   <h3>Deals:</h3>

@@ -1,20 +1,15 @@
-<div class="dealindex">
-  <p>All deals:</p>
+<div class="grid">
   <ul>
   <% for deal in @deals %>
   <% eatery = deal.find_eatery %>
-  <li>
-    <tr>
-      <td><a class="link" href="/deals/<%= deal.id %>"><%= deal.name %></a>, available on <%= deal.day_name %></td>
-      <td>|</td>
-      <td>Discount: <%= (deal.discount_decimal * 100) %>%</td>
-      <td>|</td>
-      <td><a class="link" href="/eateries/<%= eatery.id %>">Show all deals offered by <%= eatery.name %></a></td>
-    </tr>
-  </li>
+  <div class="cell">
+      <h3><a class="link" href="/deals/<%= deal.id %>"><%= deal.name %></a>, available on <%= deal.day_name %></h3>
+      <h3>Discount: <%= (deal.discount_decimal * 100) %>%</h3>
+      <h3><a class="link" href="/eateries/<%= eatery.id %>">Show all deals offered by <%= eatery.name %></a></h3>
+  </div>
   <% end %>
 </ul>
 
-<a class="button" href="/deals/new">Create a new deal!</a>
-
 </div>
+
+<a class="button" href="/deals/new">Create a new deal!</a>
