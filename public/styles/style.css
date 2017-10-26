@@ -1,28 +1,36 @@
-.nav {
-  padding: 0px 0px 0px 0px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
 }
 
 .navul {
-  padding: 0px 0px 0px 0px;
   background-color: black;
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  position: static;
-  top: 0;
-  width: 100%;
 }
 
 .navli {
   flex: 1;
   text-align: center;
   font-size: 17px;
-  border: solid 1px purple;
+  border-right: solid 1px purple;
+}
+
+.navli:last-child {
+  border: none;
 }
 
 .a {
   text-decoration: none;
-  padding: 14px 16px;
+  padding: 16px 16px;
   color: #f2f2f2;
   display: block;
 }
@@ -35,6 +43,7 @@
 #content {
   background-color: purple;
   color: white;
+  margin-top: 60px;
 }
 
 .link:link {
