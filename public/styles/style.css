@@ -8,24 +8,24 @@
   position: fixed;
   top: 0px;
   width: 100%;
+  box-shadow: 0px 5px 3px dimgray;
+  background-color: black;
 }
 
 .navul {
-  background-color: black;
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  width: 400px;
+  float: right;
 }
 
 .navli {
   flex: 1;
   text-align: center;
   font-size: 17px;
-  border-right: solid 1px purple;
-}
-
-.navli:last-child {
-  border: none;
+  justify-content: flex-end;
+  border-left: solid 1px dimgray;
 }
 
 .a {
@@ -36,14 +36,22 @@
 }
 
 .everything {
-  background-color: purple;
+
+  background: linear-gradient(to right, purple, blueviolet);
   color: white;
 }
 
 #content {
-  background-color: purple;
   color: white;
-  margin-top: 60px;
+  margin-top: 70px;
+}
+
+.form {
+  width: 300px;
+  margin: 0 auto;
+  border: solid 1px;
+  border-radius: 20px;
+  padding: 30px;
 }
 
 .link:link {
@@ -51,14 +59,15 @@
 }
 
 .link:visited {
-  color: gray;
+  color: white;
 }
 
 .link:hover {
-  color: pink;
+  color: mediumorchid;
 }
 
 .button {
+  border-radius: 20px;
   background-color: #4CAF50;
   border: none;
   color: white;

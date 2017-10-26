@@ -1,8 +1,9 @@
+<div class="form">
 <form class="" action="/deals" method="post">
   <ul style="list-style-type:none">
 
 <li>
-<label for="name"></label>
+<label for="name">Burger name: </label>
 <input type="text" name="name" placeholder="name">
 </li>
 <br />
@@ -43,7 +44,7 @@
 <li>
 <label for="burger_id"></label>
   <% for burger in @burgers %>
-  <input type="checkbox" name="burger_id[]" value="<%= burger.id %>"><%= burger.name %><br />
+  <input type="checkbox" name="burger_id[]" value="<%= burger.id %>"> <%= burger.name %><br />
   <% end %>
 </li>
 </ul>
@@ -53,7 +54,5 @@
 
 <input class="button" type="submit" value="Add deal to eatery!">
 
-
-
-
 </form>
+</div>

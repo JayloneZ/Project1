@@ -17,9 +17,9 @@ eatery1 = Eatery.new({
 eatery1.save()
 
 eatery2 = Eatery.new({
-  'name' => 'Arbys',
-  'address' => '123 Fake Street',
-  'url' => 'N/A'
+  'name' => 'Bobs Burgers',
+  'address' => 'Burger Street',
+  'url' => 'http://thebobsburgerexperiment.com/'
 })
 eatery2.save()
 
@@ -91,6 +91,3 @@ burger3_deal3 = BurgerDeal.new({
   'deal_id' => deal3.id
 })
 burger3_deal3.save()
-
-binding.pry()
-nil
