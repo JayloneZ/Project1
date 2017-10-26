@@ -6,7 +6,7 @@
 <tr>
   <td><a class="link" href="/deals/<%= deal.id %>"><%= deal.name %></a>, available on <%= deal.day_name %></td>
   <td>|</td>
-  <td>Discount: <%= deal.discount_decimal %></td>
+  <td>Discount: <%= (deal.discount_decimal * 100) %>%</td>
   <td>|</td>
   <td><a class="link" href="/eateries/<%= eatery.id %>">Show all deals offered by <%= eatery.name %></a></td>
 </tr>
@@ -14,8 +14,4 @@
 <% end %>
 </ul>
 
-<form class="" action="/deals/new" method="post">
-
-<input class="button" type="submit" value="Create new deal">
-
-</form>
+<a class="button" href="/deals/new">Create a new deal!</a>

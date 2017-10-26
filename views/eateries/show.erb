@@ -14,30 +14,21 @@
 </ul>
 <% end %>
 
-<form class="" action="/deals/new" method="post">
-
-<input type="submit" value="Create new deal">
-
-</form>
+<a class="button" href="/deals/new">Create a new deal!</a>
 
 <% burgers = @eatery.find_burgers %>
 <% if burgers != nil %>
 <p>Burgers:</p>
 <ul>
 <% for burger in burgers %>
-<li><%= burger.name %></li>
+<tr><%= burger.name %></tr>
+<tr>|</tr>
+<tr><%= "%.2f" % burger.price %></tr>
+<br />
 <% end %>
 </ul>
 <% end %>
 
-<form class="" action="/eateries/<%= @eatery.id %>" method="post">
-
-<label for="eatery_id"></label>
-<input type="hidden" name="eatery_id" value="<%= @eatery.id %>">
-
-<input class="button" type="submit" value="Create new burger">
-
-</form>
-
+<a class="button" href="/eateries/<%= @eatery.id %>/new">Create a new burger!</a>
 
 </tr>

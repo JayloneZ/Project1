@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('../models/eatery.rb')
+require_relative('../models/deal.rb')
 
 get '/eateries' do
   @eateries = Eatery.all

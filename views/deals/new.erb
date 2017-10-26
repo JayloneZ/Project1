@@ -24,7 +24,7 @@
 <li>
 <label for="discount_decimal">Select your discount!</label>
 <div id="slidecontainer">
-  <input type="range" min="0" max="1" step=".02" value="0.5" class="slider" id="discountInput" oninput="discountOutput.value = discountInput.value">
+  <input type="range" name="discount_decimal" min="0" max="1" step=".01" value="0.5" class="slider" id="discountInput" oninput="discountOutput.value = discountInput.value">
   <output name="discountOutput" id="discountOutput">0.5</output>
 </div>
 </li>
@@ -32,20 +32,20 @@
 
 <li>
 <label for="eatery_id"></label>
-<select>
+<select name="eatery_id">
   <% for eatery in @eateries %>
-  <option value="<% eatery.id %>"><%= eatery.name %></option>
+  <option value="<%= eatery.id %>"><%= eatery.name %></option>
   <% end %>
 </select>
 </li>
 <br />
 
-<!-- <li>
+<li>
 <label for="burger_id"></label>
   <% for burger in @burgers %>
-  <input type="checkbox" name="burger" value="<% burger.id %>"><%= burger.name %><br />
+  <input type="checkbox" name="burger_id[]" value="<%= burger.id %>"><%= burger.name %><br />
   <% end %>
-</li> -->
+</li>
 
 <br />
 <br />

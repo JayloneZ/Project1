@@ -1,7 +1,7 @@
 <tr>
 <td><%= @deal.name %>, available on <%= @deal.day %></td>
 <td>|<td>
-<td><%= @deal.discount_decimal %></td>
+<td>Deal discount: <%= (@deal.discount_decimal * 100) %>%</td>
 <% burgers = @deal.show_burgers %>
 <p>Deal applies to the following burgers:</p>
 <ul>
@@ -11,8 +11,8 @@
   </li>
   <ul>
   <li>
-    <p>Old Price: <strike><%= burger.price %></strike></p>
-    <p>New Price!!!: <%= (burger.price * @deal.discount_decimal).round(2) %></p>
+    <p>Old Price: <strike><%= "%.2f" % burger.price %></strike></p>
+    <p>New Price!!!: <%= "%.2f" % (burger.price * @deal.discount_decimal).round(2) %></p>
   </li>
 </ul>
 <% end %>
