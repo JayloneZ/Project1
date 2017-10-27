@@ -44,7 +44,7 @@ deal2.save()
 deal3 = Deal.new({
   'name' => '15% off for first 2 customers',
   'day' => '2',
-  'discount_decimal' => '.85',
+  'discount_decimal' => '0.15',
   'eatery_id' => eatery2.id
 })
 deal3.save()
