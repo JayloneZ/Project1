@@ -1,4 +1,3 @@
-require 'pry'
 require_relative '../models/eatery.rb'
 require_relative '../models/burger.rb'
 require_relative '../models/deal.rb'
