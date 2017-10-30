@@ -93,6 +93,3 @@ burger3_deal3 = BurgerDeal.new({
   'deal_id' => deal3.id
 })
 burger3_deal3.save()
-
-binding.pry
-nil
